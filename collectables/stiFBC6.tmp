@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpog3gmgrqkin"]
+
+[ext_resource type="PackedScene" uid="uid://c1g82jm5mjyi" path="res://collectables/collectable.tscn" id="1_aww40"]
+[ext_resource type="Texture2D" uid="uid://bgvkkxj4gqmjf" path="res://assets/Stick.png" id="2_kuj4k"]
+
+[sub_resource type="GDScript" id="GDScript_rewmh"]
+script/source = "extends \"res://scripts/collectable.gd\" #inherits this script
+
+@onready var animations = $AnimationPlayer
+
+func collect():
+	animations.play(\"spin\")
+	await animations.animation_finished
+	super.collect()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pyu0"]
+resource_local_to_scene = true
+size = Vector2(30.7012, 17.9635)
+
+[node name="Collectable" instance=ExtResource("1_aww40")]
+script = SubResource("GDScript_rewmh")
+
+[node name="CollisionShape2D" parent="." index="0"]
+rotation = -3.14159
+scale = Vector2(0.0816223, -0.837593)
+shape = SubResource("RectangleShape2D_5pyu0")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_kuj4k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
