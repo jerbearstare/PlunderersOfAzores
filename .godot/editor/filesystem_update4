@@ -1,0 +1,16 @@
+res://scenes/player.tscn
+res://inventory/playerInventory.tres
+res://scenes/world.tscn
+res://enemies/slime.tscn
+res://scenes/heartsContainer.tscn
+res://scenes/heart_gui.tscn
+res://collectables/collectable.tscn
+res://collectables/lifepot.tscn
+res://scenes/bard.tscn
+res://scenes/inventory_gui.tscn
+res://scenes/slot_gui.tscn
+res://collectables/stick.tscn
+res://inventory/inventory.gd
+res://scripts/collectable.gd
+res://scripts/stick.gd
+res://scripts/player.gd
